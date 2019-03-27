@@ -1,0 +1,5 @@
+package com.yychat.modle;
+
+public interface MessageType {
+
+}

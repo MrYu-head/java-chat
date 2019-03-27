@@ -1,0 +1,14 @@
+package com.yychatclient.view;
+
+public class ClientLogin {
+
+	public ClientLogin() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

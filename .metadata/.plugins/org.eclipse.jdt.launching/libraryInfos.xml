@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<libraryInfos>
+<libraryInfo home="G:\编程\JAVA\eclipse-oxygen\jdk8\jre" version="1.8.0_60">
+<bootpath>
+<entry path="G:\编程\JAVA\eclipse-oxygen\jdk8\jre\lib\resources.jar"/>
+<entry path="G:\编程\JAVA\eclipse-oxygen\jdk8\jre\lib\rt.jar"/>
+<entry path="G:\编程\JAVA\eclipse-oxygen\jdk8\jre\lib\sunrsasign.jar"/>
+<entry path="G:\编程\JAVA\eclipse-oxygen\jdk8\jre\lib\jsse.jar"/>
+<entry path="G:\编程\JAVA\eclipse-oxygen\jdk8\jre\lib\jce.jar"/>
+<entry path="G:\编程\JAVA\eclipse-oxygen\jdk8\jre\lib\charsets.jar"/>
+<entry path="G:\编程\JAVA\eclipse-oxygen\jdk8\jre\lib\jfr.jar"/>
+<entry path="G:\编程\JAVA\eclipse-oxygen\jdk8\jre\classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="G:\编程\JAVA\eclipse-oxygen\jdk8\jre\lib\ext"/>
+<entry path="C:\Windows\Sun\Java\lib\ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="G:\编程\JAVA\eclipse-oxygen\jdk8\jre\lib\endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+<libraryInfo home="G:\编程\JAVA\eclipse-oxygen\jdk8" version="1.8.0_60">
+<bootpath>
+<entry path="G:\编程\JAVA\eclipse-oxygen\jdk8\jre\lib\resources.jar"/>
+<entry path="G:\编程\JAVA\eclipse-oxygen\jdk8\jre\lib\rt.jar"/>
+<entry path="G:\编程\JAVA\eclipse-oxygen\jdk8\jre\lib\sunrsasign.jar"/>
+<entry path="G:\编程\JAVA\eclipse-oxygen\jdk8\jre\lib\jsse.jar"/>
+<entry path="G:\编程\JAVA\eclipse-oxygen\jdk8\jre\lib\jce.jar"/>
+<entry path="G:\编程\JAVA\eclipse-oxygen\jdk8\jre\lib\charsets.jar"/>
+<entry path="G:\编程\JAVA\eclipse-oxygen\jdk8\jre\lib\jfr.jar"/>
+<entry path="G:\编程\JAVA\eclipse-oxygen\jdk8\jre\classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="G:\编程\JAVA\eclipse-oxygen\jdk8\jre\lib\ext"/>
+<entry path="C:\Windows\Sun\Java\lib\ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="G:\编程\JAVA\eclipse-oxygen\jdk8\jre\lib\endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+</libraryInfos>

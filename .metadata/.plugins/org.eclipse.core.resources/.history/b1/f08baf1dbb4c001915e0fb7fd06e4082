@@ -1,0 +1,9 @@
+package com.yychat.modle;
+
+public class Message {
+
+	public Message() {
+		// TODO Auto-generated constructor stub
+	}
+
+}
