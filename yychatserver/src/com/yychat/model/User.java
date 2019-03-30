@@ -2,10 +2,9 @@ package com.yychat.model;
 
 import java.io.Serializable;
 
-public class User implements Serializable{//序列化接口
+public class User implements Serializable {
 	private String userName;
 	private String passWord;
-	
 	public String getUserName() {
 		return userName;
 	}
@@ -19,5 +18,5 @@ public class User implements Serializable{//序列化接口
 		this.passWord = passWord;
 	}
 	
-	
+
 }

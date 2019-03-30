@@ -3,17 +3,17 @@ package com.yychat.model;
 import java.io.Serializable;
 
 public class Message implements Serializable,MessageType{
+
 	private String sender;
 	private String receiver;
-	private String content;	
-	private String messageType;
-	
+	private String content;
 	public String getContent() {
 		return content;
 	}
 	public void setContent(String content) {
 		this.content = content;
 	}
+	private String messageType;
 	public String getSender() {
 		return sender;
 	}
@@ -32,6 +32,5 @@ public class Message implements Serializable,MessageType{
 	public void setMessageType(String messageType) {
 		this.messageType = messageType;
 	}
-	
-	
+
 }

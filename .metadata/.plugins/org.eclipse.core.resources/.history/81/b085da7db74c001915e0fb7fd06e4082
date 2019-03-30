@@ -1,9 +1,0 @@
-package com.yychatserver.controller;
-
-public class ServerReceiver {
-
-	public ServerReceiver() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

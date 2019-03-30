@@ -34,8 +34,10 @@ public class FriendList extends JFrame implements ActionListener,MouseListener{/
 	JButton blackListJButton1;
 	String userName;
 	public FriendList(String userName){
+		this.userName=userName;
 		//第一张卡片
 		myFriendPanel=new JPanel(new BorderLayout());//边界布局
+		//System.out.printin(myFriendPanel.getLayou());
 		
 		myFriendJButton=new JButton("我的好友");
 		myFriendPanel.add(myFriendJButton,"North");
@@ -44,14 +46,14 @@ public class FriendList extends JFrame implements ActionListener,MouseListener{/
 		myFriendListJPanel=new JPanel(new GridLayout(FRIENDCOUNT-1,1));
 		for(int i=1;i<FRIENDCOUNT;i++)
 		{
-			myFriendJLabel[i]=new JLabel(i+"",new ImageIcon("image/YY1.gif"),JLabel.LEFT);//"1"
+			myFriendJLabel[i]=new JLabel(i+"",new ImageIcon("image/yy0.gif"),JLabel.LEFT);//"1"
 			myFriendJLabel[i].addMouseListener(this);
 			myFriendListJPanel.add(myFriendJLabel[i]);
 		}
-
+		//myFriendScrollPane=new JScrollPane();
+		//myFriendScrollPane.add(myFriendListJPanel);
 		myFriendScrollPane=new JScrollPane(myFriendListJPanel);
 		myFriendPanel.add(myFriendScrollPane);
-		
 		
 		myStrangerBlackListJPanel=new JPanel(new GridLayout(2,1));//网络布局
 		myStrangerJButton=new JButton("我的陌生人");
@@ -68,6 +70,7 @@ public class FriendList extends JFrame implements ActionListener,MouseListener{/
 		
 		myFriendStrangerPanel=new JPanel(new GridLayout(2,1));
 		
+	
 		myFriendJButton1=new JButton("我的好友");//添加监听器
 		myFriendJButton1.addActionListener(this);
 		myStrangerJButton1=new JButton("我的陌生人");
@@ -78,7 +81,7 @@ public class FriendList extends JFrame implements ActionListener,MouseListener{/
 		myStrangerListJPanel=new JPanel(new GridLayout(STRANGER-1,1));
 		for(int i=1;i<STRANGER;i++)
 		{
-			myStrangerJLabel[i]=new JLabel(i+"",new ImageIcon("image/YY1.gif"),JLabel.LEFT);//"2"
+			myStrangerJLabel[i]=new JLabel(i+"",new ImageIcon("image/yy1.gif"),JLabel.LEFT);//"2"
 			myStrangerJLabel[i].addMouseListener(this);
 			myStrangerListJPanel.add(myStrangerJLabel[i]);
 		}
@@ -119,7 +122,13 @@ public class FriendList extends JFrame implements ActionListener,MouseListener{/
 
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
-		// TODO Auto-generated method stub
+		if(arg0.getClickCount()==2){
+			JLabel jlbl=(JLabel)arg0.getSource();
+			String receiver =jlbl.getText();
+			//new FriendChatClient(this.userName,receiver);
+			new Thread(new FriendChat(this.userName,receiver)).start();
+		}
+		
 		
 	}
 

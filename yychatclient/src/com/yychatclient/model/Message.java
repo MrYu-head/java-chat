@@ -2,18 +2,18 @@ package com.yychatclient.model;
 
 import java.io.Serializable;
 
-public class Message implements Serializable,MessageType{//类是单继承
+public class Message implements Serializable,MessageType {
+
 	private String sender;
 	private String receiver;
-	private String content;	
-	private String messageType;
-	
+	private String content;
 	public String getContent() {
 		return content;
 	}
 	public void setContent(String content) {
 		this.content = content;
 	}
+	private String messageType;
 	public String getSender() {
 		return sender;
 	}
@@ -32,6 +32,5 @@ public class Message implements Serializable,MessageType{//类是单继承
 	public void setMessageType(String messageType) {
 		this.messageType = messageType;
 	}
-	
-	
+
 }

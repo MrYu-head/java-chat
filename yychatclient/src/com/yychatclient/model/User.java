@@ -2,22 +2,21 @@ package com.yychatclient.model;
 
 import java.io.Serializable;
 
-public class User implements Serializable{//序列化接口
+public class User implements Serializable{
 	private String userName;
-	private String password;
-		
+	private String passWord;
 	public String getUserName() {
 		return userName;
 	}
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
-	public String getPassword() {
-		return password;
+	public String getPassWord() {
+		return passWord;
 	}
-	public void setPassword(String password) {
-		this.password = password;
+	public void setPassWord(String passWord) {
+		this.passWord = passWord;
 	}
 	
-	
+
 }
