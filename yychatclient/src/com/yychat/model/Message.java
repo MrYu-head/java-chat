@@ -34,4 +34,3 @@ public class Message implements Serializable,MessageType{
 	}
 
 }
-

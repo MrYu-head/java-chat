@@ -8,7 +8,9 @@ import javax.swing.*;
 
 import com.yychatserver.controller.StartServer;
 
-public class ChatServer extends JFrame implements ActionListener{
+
+
+public class ChatServer  extends JFrame implements ActionListener{
 		JButton jb1;
 		JButton jb2;
 		JPanel jp;
@@ -16,11 +18,11 @@ public class ChatServer extends JFrame implements ActionListener{
 		jb1=new JButton("启动服务器");
 		jb1.addActionListener(this);
 		jb2=new JButton("停止服务器");
-		jp=new JPanel();
+		jp =new JPanel();
 		jp.add(jb1);
 		jp.add(jb2);
 		this.add(jp);
-	
+		
 		this.setSize(240,240);
 		this.setTitle("YYChat服务器");
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -31,11 +33,12 @@ public class ChatServer extends JFrame implements ActionListener{
 		
 		
 	}
-	
+
 	public static void main(String[] args) {
-		ChatServer chatServer=new ChatServer();
-		
+		ChatServer ChatServer=new ChatServer();
+
 	}
+
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		new StartServer();
