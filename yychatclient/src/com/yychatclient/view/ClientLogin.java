@@ -4,6 +4,10 @@ import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.net.Socket;
+import java.util.HashMap;
 
 import javax.swing.*;
 
@@ -12,6 +16,9 @@ import com.yychat.model.User;
 import com.yychatclient.controller.ClientConnect;
 
 public class ClientLogin extends JFrame implements ActionListener{//类名：ClientLogin，模板，对象的模板
+	public static HashMap hmFirendlist=new HashMap<String,FriendList>();
+	
+	
 	//定义北部组件
 	JLabel jlbl1;//定义标签
 	
@@ -81,9 +88,29 @@ public class ClientLogin extends JFrame implements ActionListener{//类名：Client
 			user.setUserName(userName);
 			user.setPassWord(passWord);
 			
-			Message mess=new ClientConnect().loginValidate(user);
-			if(mess.getMessageType().equals(Message.message_LoginSuccess)){
-				new FriendList(userName);
+			boolean loginSuccess=new ClientConnect().loginValidate(user);
+			if(loginSuccess){
+				FriendList friendList=new FriendList(userName);
+				hmFirendlist.put(userName, friendList);
+				//第1步：向服务器发送获取在线用户信息的请求（Message）,类型：message_RequestOnlineFriend
+				Message mess=new Message();
+				mess.setSender(userName);
+				mess.setReceiver("Server");
+				mess.setMessageType(Message.message_RequestOnlineFriend);
+				Socket s=(Socket)ClientConnect.hmSocket.get(userName);
+				ObjectOutputStream oos;
+				try {
+					oos = new ObjectOutputStream(s.getOutputStream());
+					oos.writeObject(mess);
+					
+				} catch (IOException e1) {
+				
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			
+					
+				
 				this.dispose();
 			}
 			else{

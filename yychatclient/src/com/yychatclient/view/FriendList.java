@@ -71,10 +71,13 @@ public class FriendList extends JFrame implements ActionListener,MouseListener{/
 		for(int i=1;i<FRIENDCOUNT;i++)
 		{
 			myFriendJLabel[i]=new JLabel(i+"",new ImageIcon("image/YY1.gif"),JLabel.LEFT);//"1"
+			myFriendJLabel[i].setEnabled(false);
+			//if(Integer.parseInt(userName)==i) myFriendJLabel[i].setEnabled(true);
+			
 			myFriendJLabel[i].addMouseListener(this);
 			myFriendListJPanel.add(myFriendJLabel[i]);
 		}
-
+		    myFriendJLabel[Integer.parseInt(userName)].setEnabled(true);
 		myFriendScrollPane=new JScrollPane(myFriendListJPanel);
 		myFriendPanel.add(myFriendScrollPane);
 		
@@ -162,7 +165,14 @@ public class FriendList extends JFrame implements ActionListener,MouseListener{/
 		//FriendList friendList=new FriendList();
 		
 	}
-	
+	public void setEnableFriendIcon(String friendString){
+		//
+		String[] friendName=friendString.split(" ");
+		int count=friendName.length;
+		for(int i=0;i<count;i++){
+			myFriendJLabel[Integer.parseInt(friendName[i])].setEnabled(true);
+		}
+	}
 	@Override
 	public void actionPerformed(ActionEvent argo){
 		if(argo.getSource()==myStrangerJButton){
@@ -198,9 +208,14 @@ public class FriendList extends JFrame implements ActionListener,MouseListener{/
 			 String receiver=jlbl.getText();
 			//new FriendChat(this.userName,receiver);
 			 //new Thread(new FriendChat(this.userName,receiver)).start();
-			 FriendChat1 friendChat1=new FriendChat1(this.userName,receiver);
+			 FriendChat1 friendChat1=(FriendChat1)hmFriendChat1.get(userName+"to"+receiver);
+			 if(friendChat1==null){
+			 friendChat1=new FriendChat1(this.userName,receiver);
 			 hmFriendChat1.put(userName+"to"+receiver,friendChat1 );
 			 
+			 }else{
+				 friendChat1.setVisible(true);
+			 }
 		
 		}
 		

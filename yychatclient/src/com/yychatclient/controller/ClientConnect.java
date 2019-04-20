@@ -24,7 +24,8 @@ public class ClientConnect {
 		}
 	}
 		
-	public Message loginValidate(User user){
+	public boolean loginValidate(User user){
+		boolean loginSuccess=false;
 		ObjectOutputStream oos;
 		ObjectInputStream ois;
 		Message mess=null;
@@ -37,6 +38,7 @@ public class ClientConnect {
 			
 			
 			if(mess.getMessageType().equals(Message.message_LoginSuccess)){
+				loginSuccess=true;
 				System.out.println(user.getUserName()+"µÇÂ½³É¹¦");
 				hmSocket.put(user.getUserName(),s);
 				new ClientRecieverThread(s).start();
@@ -45,6 +47,6 @@ public class ClientConnect {
 		} catch (IOException | ClassNotFoundException e) {
 			e.printStackTrace();
 		}
-		return mess;
+		return loginSuccess;
 }
 	}
