@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 public class Message implements Serializable,MessageType{
 
+	public static String message_NewOnlineFriend;
 	private String sender;
 	private String receiver;
 	private String content;
