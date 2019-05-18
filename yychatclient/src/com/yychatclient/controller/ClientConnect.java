@@ -24,7 +24,25 @@ public class ClientConnect {
 		}
 	}
 		
-	public boolean loginValidate(User user){
+	public Message loginValidateFromDB(User user){
+		ObjectOutputStream oos;
+		ObjectInputStream ois;
+		Message mess=null;
+		try {
+			oos =new ObjectOutputStream(s.getOutputStream());
+			oos.writeObject(user);
+			
+			ois=new ObjectInputStream(s.getInputStream());
+			mess=(Message)ois.readObject();
+			
+			
+			if(mess.getMessageType().equals(Message.message_LoginSuccess)){
+				System.out.println(user.getUserName()+"登陆成功");
+				hmSocket.put(user.getUserName(),s);
+				new ClientRecieverThread(s).start();
+			}
+	
+	/*public boolean loginValidate(User user){
 		boolean loginSuccess=false;
 		ObjectOutputStream oos;
 		ObjectInputStream ois;
@@ -42,11 +60,12 @@ public class ClientConnect {
 				System.out.println(user.getUserName()+"登陆成功");
 				hmSocket.put(user.getUserName(),s);
 				new ClientRecieverThread(s).start();
-			}
+			}*/
 			
 		} catch (IOException | ClassNotFoundException e) {
 			e.printStackTrace();
 		}
-		return loginSuccess;
-}
+		return mess;
 	}
+}
+	

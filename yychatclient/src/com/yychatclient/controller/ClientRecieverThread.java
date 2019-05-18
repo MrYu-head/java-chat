@@ -43,12 +43,6 @@ public class ClientRecieverThread extends Thread{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		}
-				
+		}				
 	}
-		
-	
-	
-	}
-
-
+}
